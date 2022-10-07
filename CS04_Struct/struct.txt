@@ -1,0 +1,8 @@
+struct là kiểu tham trị:int , booleen..
+lưu trữ ở bộ nhớ stack
+lớp thì lưu trữ ở bộ nhớ heap
+struct đã khởi tạo thì bắt buộc phải gán giá trị
+co the dung thuoc tinh de get gia tri
+khi trong 1 class cả 2 đều tham chiếu đến cùng 1 đối tượng
+nên khi gán sp2=sp1 và thay đổi giá trị của sp2 thì sp1 cũng bị thay đổi
+struct là tham trị còn class là tham chiếu
