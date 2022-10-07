@@ -1,0 +1,4 @@
+khi sử dụng 1 biến là tham số cho 1 phương thức, giá trị của biến  được dùng để khởi tạo 1 biến
+cục bộ bên trong phương thức. Giá trị của biến được gán cho biến cục bộ
+
+các tham số là đối tượng lớp mặc định là tham chiếu chứ không phải tham triệu
