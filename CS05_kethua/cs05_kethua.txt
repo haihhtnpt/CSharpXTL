@@ -1,0 +1,3 @@
+dùng từ khóa sealed de niem phong lop lai, khong cho cac lop khac ke thua
+dung tu khoa base de goi lop co so
+các đối tượng lớp cơ sỏ  có thể gán bằng các đối tượng lớp kế thừa
