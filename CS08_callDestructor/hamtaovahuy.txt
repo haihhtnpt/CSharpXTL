@@ -1,0 +1,17 @@
+Nếu có hàm tạo trong lớp dẫn xuất thì phải cung cấp 1 hàm tao thích hợp trong lớp cơ sở
+Nếu chỉ có trong lớp dẫn xuất mà k có trong lớp cơ sở thì trình biên dịch sẽ bị lỗi
+Phương thức khởi tạo lớp cơ sở sẽ được gọi đầu tiên rồi sau đó mới đến lớp dẫn xuất 
+Nếu muốn gọi hàm tạo có tham số của lớp cơ sở thì phải dùng từ khóa base, vì chỉ có hàm tạo mặc định của lớp 
+cơ sở mới được gọi
+
+ Destructor có một số đặc điểm như sau:
+
+Được gọi đến trước khi một đối tượng bị thu hồi. Rất hữu ích để giải phóng tài nguyên bộ nhớ trước khi kết thúc chương trình.
+Không được chỉ định phạm vi truy cập.
+Không được kế thừa (inherited) hoặc nạp chồng (overloaded).
+Mỗi lớp chỉ có duy nhất một phương thức destructor.
+Destructor không thể được gọi từ đối tượng, mà nó sẽ được gọi ngầm một cách tự động.
+Destructor chỉ có trong kiểu class, mà không có trong kiểu struct.
+Nếu destructor là rỗng (empty – không có nội dung) thì không nên sử dụng. Vì khi một class có chứa phương thức destructor thì khi đó một entry sẽ được tạo trong queue (hàng đợi) của Finalize.
+Khi destructor được gọi thì Garbage Collector (GC) được gọi để xử lý. Do đó mà gây ra một tổn thất không cần thiết về hiệu suất của chương trình.
+Vì vậy nếu không có xử lý gì đặc biệt để giải phóng vùng nhớ thì không khai báo phương thức destructor.
