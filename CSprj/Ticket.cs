@@ -1,3 +1,4 @@
+using System.Text;
 using System.Runtime.CompilerServices;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -9,13 +10,14 @@ namespace CSprj
         public Ticket(){
 
         }
-        public Ticket(string name, string address, string cardNo, DateTime birth, TicketType type)
+        public Ticket(string name, string address, string cardNo, DateTime birth, TicketType type,string emailAddress )
         {
             Name = name;
             Address = address;
             CardNo = cardNo;
             _birth = birth;
             Type = type;
+            EmailAddress=emailAddress;
         }
         private DateTime _birth;
         [Required()]
@@ -47,6 +49,55 @@ namespace CSprj
                 }
                 return Type == TicketType.Normal ? 700000 : 1500000;
             }
+        }
+        public void Realline(){
+           
+            Console.Write("Enter name:= ");
+            Name=Convert.ToString(Console.ReadLine());
+            Console.Write("Enter address:= ");
+            Address=Convert.ToString(Console.ReadLine());
+            Console.Write("Enter CardNo:= ");
+            CardNo=Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Nhập ngày tháng năm sinh: ");
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine("Ngày: ");
+            int day = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Tháng: ");
+            int month = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Năm: ");
+            int year = Int32.Parse(Console.ReadLine());
+           // DateTime Birth = new DateTime(year,month,day); 
+            _birth= new DateTime(year,month,day);     
+            Console.WriteLine("Enter TypeTicket (Normal=0,Vip=1):= ");
+            string type=(Console.ReadLine());
+            TicketType ticketTypeENum;
+            if(type=="0"){
+                ticketTypeENum=TicketType.Vip;
+            }
+            else if(type=="1"){
+                ticketTypeENum=TicketType.Normal;
+            }
+            else
+            throw new ApplicationException("Cú pháp nhập vào không hợp lệ. Yêu cầu chỉ được chọn 1 hoặc 2.");
+            
+            Console.Write("nhap dia chi email:= ");
+            EmailAddress=Convert.ToString(Console.ReadLine());
+
+
+
+        }
+        public void writeline(){
+            
+            //Console.WriteLine(Name);
+          
+            //Console.WriteLine(Type);
+             //Console.WriteLine(_birth);
+           // Console.WriteLine(_birth.Day);
+          //  Console.WriteLine(Age);
+           
+            Console.WriteLine($"Giá vé lá:= {Payment}");
         }
     }
 }
